@@ -1,8 +1,8 @@
 default: &default
   # Database configuration
   DB_PORT: "5432"
-  DB_POOL: <%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>
-  DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
+  DB_POOL: "<%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>"
+  DB_HOST: "<%= ENV.fetch("DATABASE_HOST") { "localhost" } %>"
   DB_DATABASE: "database name"
   DB_USERNAME: "database username"
   DB_PASSWORD: "database password"
@@ -15,9 +15,19 @@ default: &default
   # GeoCoder configuration (developer.here.com)
   GEOCODER_LOOKUP_APP_ID: "here_app_id"
   GEOCODER_LOOKUP_APP_CODE: "here_app_code"
+  IDCAT_MOBILE_CLIENT_ID: "idcat_mobile_client_id"
+  IDCAT_MOBILE_CLIENT_SECRET: "idcat_mobile_client_secret"
+  IDCAT_MOBILE_SITE_URL: "idcat_mobile_site_url"
 
 development:
   <<: *default
+  # secrets
+  SECRET_KEY_BASE: 3737d2c871c5c2bf91cefd45f51ac69a15326fa451427dc2b7f64c89845d44e35bee56e2393f28b566eb85cfc181a4ff6acca2d4b383bdf7e2361e29e40f0d40
+
+test:
+  <<: *default
+  # secrets
+  SECRET_KEY_BASE: bc54cd94ebeb235a1906ae578574061bc4d650362146a8c24ba63be5c97190dc9da749a53eda1a05c1dd6a816dda744692bb5415db041514b4cdac049d4e94f0
 
 integration:
   <<: *default
@@ -26,6 +36,8 @@ integration:
 
 staging:
   <<: *default
+  SECRET_KEY_BASE: <%= ENV['SECRET_KEY_BASE'] %>
 
 production:
   <<: *default
+  SECRET_KEY_BASE: <%= ENV['SECRET_KEY_BASE'] %>
