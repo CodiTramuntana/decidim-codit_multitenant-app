@@ -3,7 +3,6 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 DECIDIM_VERSION= '>= 0.15.0'
 
-# gem 'rails', '<= 5.2.0'
 gem 'decidim', DECIDIM_VERSION
 gem 'decidim-members', git: "ssh://git@gitlab.coditdev.net:534/decidim/decidim-members.git", branch: "upgrade/decidim-0.15"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", branch: "upgrade/decidim-0.15"
@@ -16,9 +15,12 @@ gem 'daemons'
 gem 'puma', '>= 3.0'
 gem 'figaro', '>= 1.1.1'
 
-group :development, :test do
+group :development, :test, :integration do
   gem 'faker', '>= 1.9.1'
   gem 'byebug', platform: :mri
+end
+
+group :development, :test, :integration do
   gem "decidim-dev", DECIDIM_VERSION
 end
 
