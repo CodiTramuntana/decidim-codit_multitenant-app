@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Whenever Schedule' do
   before do
-    load 'Rakefile' # Makes sure rake tasks are loaded so you can assert in rake jobs
+    load 'Rakefile'
   end
 
   let(:schedule) { Whenever::Test::Schedule.new(file: 'config/schedule.rb') }
@@ -12,10 +12,10 @@ describe 'Whenever Schedule' do
   let(:command) { rake.first[:command] }
 
   it 'makes sure `rake` statements exist' do
-    expect(schedule.jobs[:rake].count).to eq(1)
+    expect(rake.count).to eq(1)
   end
 
-  it 'makes sure `rake` task doesnt crash' do
+  it 'makes sure the rake task doesnt crash when executed' do
     expect(Rake::Task[task].invoke).to be_truthy
   end
 
@@ -24,7 +24,7 @@ describe 'Whenever Schedule' do
     expect(every[1][:at]).to eq("2:00 am")
   end
 
-  it 'makes sure `command` statements exist' do
+  it 'makes sure a command is generated' do
     expect(command).to be_truthy
   end
 end
