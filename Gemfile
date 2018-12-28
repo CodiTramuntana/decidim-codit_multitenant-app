@@ -22,6 +22,7 @@ group :development, :test do
   gem 'faker', '~> 1.9.1'
   gem 'byebug', platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
+  gem 'whenever-test'
 end
 
 group :development do
