@@ -15,8 +15,8 @@ describe 'Whenever Schedule' do
     expect(rake.count).to eq(1)
   end
 
-  it 'makes sure the rake task doesnt crash when executed' do
-    expect(Rake::Task[task].invoke).to be_truthy
+  it 'makes sure the rake task raises no exception' do
+    expect { Rake::Task[task].invoke }.not_to raise_error
   end
 
   it "makes sure the schedule is correct" do
