@@ -136,6 +136,7 @@ GEM
       cells (>= 4.1.6, < 5.0.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    chronic (0.10.2)
     coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -735,6 +736,10 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    whenever (0.10.0)
+      chronic (>= 0.6.3)
+    whenever-test (1.0.1)
+      whenever
     wisper (2.0.0)
     wisper-rspec (1.1.0)
     xpath (3.2.0)
@@ -763,9 +768,11 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier (>= 4.0.0)
   web-console
+  whenever (~> 0.10)
+  whenever-test
 
 RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

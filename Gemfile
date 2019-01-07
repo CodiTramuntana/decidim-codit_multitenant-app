@@ -12,6 +12,8 @@ gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntan
 gem 'delayed_job_active_record'
 gem 'daemons'
 
+gem "whenever", "~> 0.10"
+
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 4.0.0'
 gem 'figaro', '>= 1.1.1'
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'faker', '~> 1.9.1'
   gem 'byebug', platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
+  gem 'whenever-test'
 end
 
 group :development do
