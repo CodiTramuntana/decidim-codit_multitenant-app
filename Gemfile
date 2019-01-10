@@ -5,6 +5,10 @@ DECIDIM_VERSION= '~> 0.15.1'
 
 # gem 'rails', '<= 5.2.0'
 gem 'decidim', DECIDIM_VERSION
+gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-sortitions", DECIDIM_VERSION
+gem "decidim-consultations", DECIDIM_VERSION
+gem "decidim-conferences", DECIDIM_VERSION
 gem 'decidim-members', git: "ssh://git@gitlab.coditdev.net:534/decidim/decidim-members.git", tag: "v0.15.0"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.5"
 gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "fix/ensure_all_data_properly_encoded"
