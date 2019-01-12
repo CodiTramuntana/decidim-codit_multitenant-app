@@ -16,7 +16,7 @@ gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntan
 gem 'delayed_job_active_record'
 gem 'daemons'
 
-gem "whenever", "~> 0.10"
+gem "whenever", require: false
 
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 4.0.0'
