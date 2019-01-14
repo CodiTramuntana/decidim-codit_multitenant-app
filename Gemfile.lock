@@ -18,17 +18,6 @@ GIT
       decidim-admin (>= 0.15.0)
       decidim-verifications (>= 0.15.0)
 
-GIT
-  remote: ssh://git@gitlab.coditdev.net:534/decidim/decidim-members.git
-  revision: 1e5c0527c19077e1429126e6ca14b6b9fa9bed3d
-  tag: v0.15.1
-  specs:
-    decidim-members (0.1.10)
-      decidim-core (>= 0.15.0)
-      pg_search
-      rails (~> 5.2)
-      sanitize (~> 4.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -510,8 +499,6 @@ GEM
     nobspw (0.4.0)
     nokogiri (1.10.0)
       mini_portile2 (~> 2.4.0)
-    nokogumbo (1.5.0)
-      nokogiri
     oauth (0.5.4)
     oauth2 (1.4.1)
       faraday (>= 0.8, < 0.16.0)
@@ -666,10 +653,6 @@ GEM
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     safe_yaml (1.0.4)
-    sanitize (4.6.6)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4)
     sass (3.4.25)
     sassc (1.12.1)
       ffi (~> 1.9.6)
@@ -776,7 +759,6 @@ DEPENDENCIES
   decidim-dev (~> 0.15.2)
   decidim-file_authorization_handler!
   decidim-initiatives (~> 0.15.2)
-  decidim-members!
   decidim-sortitions (~> 0.15.2)
   decidim-verifications-csv_email!
   delayed_job_active_record
