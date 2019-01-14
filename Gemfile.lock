@@ -1,11 +1,11 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
-  revision: ae8669cf7011cf9ec7b6c4d48319b495d746f284
-  branch: fix/ensure_all_data_properly_encoded
+  revision: e0424156783758cb039fe031d9b9f1e28b0604ba
+  tag: v0.15.0
   specs:
-    decidim-file_authorization_handler (0.12.0)
-      decidim (>= 0.12.0)
-      decidim-admin (>= 0.12.0)
+    decidim-file_authorization_handler (0.15.0)
+      decidim (>= 0.15.0)
+      decidim-admin (>= 0.15.0)
       rails (>= 5.2)
 
 GIT
@@ -20,8 +20,8 @@ GIT
 
 GIT
   remote: ssh://git@gitlab.coditdev.net:534/decidim/decidim-members.git
-  revision: de2ee4fca228abcfd982eb543f7e55cc862b2a42
-  tag: v0.15.0
+  revision: 1e5c0527c19077e1429126e6ca14b6b9fa9bed3d
+  tag: v0.15.1
   specs:
     decidim-members (0.1.10)
       decidim-core (>= 0.15.0)
@@ -789,7 +789,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier (>= 4.0.0)
   web-console
-  whenever (~> 0.10)
+  whenever
   whenever-test
 
 RUBY VERSION
