@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: ea18c729d704dcd2a7a5cf38c0530b6f1a82b25c
-  tag: v0.1.11
+  revision: 29932f48b7a4754db03d119e7cdb5671b3cc27fa
+  tag: v0.1.12
   specs:
-    decidim-members (0.1.11)
+    decidim-members (0.1.12)
       decidim-core (>= 0.15.0)
       pg_search
       rails (~> 5.2)
