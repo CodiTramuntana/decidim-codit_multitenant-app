@@ -3,13 +3,12 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 DECIDIM_VERSION= '~> 0.16.0'
 
-# gem 'rails', '<= 5.2.0'
 gem 'decidim', DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-sortitions", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.12"
+gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.13"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.5"
 gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.15.0"
 
@@ -21,11 +20,6 @@ gem "whenever", require: false
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 4.0.0'
 gem 'figaro', '>= 1.1.1'
-
-## Start force versions Gem
-gem 'graphiql-rails', '1.4.11'
-gem 'graphql', '1.8.10'
-## End force versions Gem
 
 group :development, :test do
   gem 'faker', '~> 1.9.1'
