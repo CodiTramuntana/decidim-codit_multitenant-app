@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION= '~> 0.16.0'
+DECIDIM_VERSION= '~> 0.16.1'
 
 gem 'decidim', DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -10,7 +10,7 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.14"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.6"
-gem 'decidim-file_authorization_handler', git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.15.0"
+gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
 
 gem 'delayed_job_active_record'
 gem 'daemons'
