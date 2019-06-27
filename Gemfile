@@ -8,13 +8,14 @@ gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-sortitions", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.14"
+gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.15"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.6"
 gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
 gem "decidim-term_customizer"
 
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem 'sanitize', '~> 4.0', '>= 4.0.1'
 
 gem "whenever", require: false
 
