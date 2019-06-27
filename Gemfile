@@ -12,6 +12,7 @@ gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.g
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.6"
 gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
 gem "decidim-term_customizer"
+gem 'decidim-verifications-sant_boi_census', git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.1"
 
 gem 'delayed_job_active_record'
 gem 'daemons'
