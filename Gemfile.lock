@@ -18,6 +18,17 @@ GIT
       decidim-verifications (>= 0.15.0)
 
 GIT
+  remote: https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git
+  revision: a9665edb7490b271a2afd75ef5b0588a5fea0915
+  tag: v0.0.1
+  specs:
+    decidim-verifications-sant_boi_census (0.0.1)
+      decidim-core (>= 0.17.0)
+      decidim-verifications (>= 0.17.0)
+      rails (>= 5.2)
+      virtus-multiparams
+
+GIT
   remote: https://github.com/MarsBased/decidim-file_authorization_handler.git
   revision: f01aaa7fcc9518228f7f079ca06c58aada8230c2
   specs:
@@ -821,6 +832,7 @@ DEPENDENCIES
   decidim-sortitions (~> 0.17.1)
   decidim-term_customizer
   decidim-verifications-csv_email!
+  decidim-verifications-sant_boi_census!
   delayed_job_active_record
   faker (~> 1.9.1)
   figaro (>= 1.1.1)
