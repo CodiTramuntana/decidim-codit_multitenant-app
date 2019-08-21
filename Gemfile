@@ -24,6 +24,11 @@ gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 4.0.0'
 gem 'figaro', '>= 1.1.1'
 
+# Force gem version to fix:
+# undefined method `polymorphic?' for ActiveRecord::Reflection::PolymorphicReflection
+# See: https://github.com/activerecord-hackery/ransack/issues/1039
+gem 'ransack', '2.1.1'
+
 group :development, :test do
   gem 'faker', '~> 1.9.1'
   gem 'byebug', platform: :mri
