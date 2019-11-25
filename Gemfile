@@ -11,7 +11,7 @@ gem "decidim-conferences", DECIDIM_VERSION
 gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.16"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.7"
 gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
-gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer.git"
+gem "decidim-term_customizer", git: 'https://github.com/mainio/decidim-module-term_customizer'
 gem 'decidim-verifications-sant_boi_census', git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.2"
 
 gem 'delayed_job_active_record'
