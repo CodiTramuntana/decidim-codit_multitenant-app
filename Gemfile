@@ -20,7 +20,7 @@ gem 'sanitize', '~> 4.0', '>= 4.0.1'
 
 gem "whenever", require: false
 
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 gem 'uglifier', '>= 4.0.0'
 gem 'figaro', '>= 1.1.1'
 
