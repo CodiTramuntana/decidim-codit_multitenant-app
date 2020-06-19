@@ -16,7 +16,7 @@ gem 'decidim-verifications-sant_boi_census', git: "https://github.com/CodiTramun
 
 gem 'delayed_job_active_record'
 gem 'daemons'
-gem 'sanitize', '~> 4.0', '>= 4.0.1'
+gem 'sanitize', '~> 5.2'
 
 gem "whenever", require: false
 
