@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.19-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: '0.20-stable' }
 
 gem 'decidim', DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -11,12 +11,13 @@ gem "decidim-conferences", DECIDIM_VERSION
 gem 'decidim-members', git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.16"
 gem 'decidim-verifications-csv_email', git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.7"
 gem 'decidim-file_authorization_handler', git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
-gem "decidim-term_customizer", git: 'https://github.com/mainio/decidim-module-term_customizer'
+gem "decidim-term_customizer", git: 'https://github.com/CodiTramuntana/decidim-module-term_customizer'
 gem 'decidim-verifications-sant_boi_census', git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.2"
 
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'sanitize', '~> 5.2'
+gem 'geocoder', '~> 1.5.2'
 
 gem "whenever", require: false
 
