@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.20-stable' }
+
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.21-stable' }
 
 gem 'decidim', DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -21,7 +22,7 @@ gem 'geocoder', '~> 1.5.2'
 
 gem "whenever", require: false
 
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'uglifier', '>= 4.0.0'
 gem 'figaro', '>= 1.1.1'
 

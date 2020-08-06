@@ -13,10 +13,6 @@ module CoditMultitenantApp
 
     config.active_job.queue_adapter = :delayed_job
 
-    # Default app time zone
-    config.time_zone = 'Madrid'
-    config.active_record.default_timezone = :local
-    config.active_record.time_zone_aware_attributes = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
