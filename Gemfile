@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.22-stable' }
+DECIDIM_VERSION = { git: 'https://github.com/decidim/decidim.git', branch: 'release/0.23-stable' }
 
 gem 'decidim', DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
@@ -18,7 +18,6 @@ gem 'decidim-verifications-sant_boi_census', git: "https://github.com/CodiTramun
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'sanitize', '~> 5.2'
-gem 'geocoder', '~> 1.5.2'
 
 gem "whenever", require: false
 
