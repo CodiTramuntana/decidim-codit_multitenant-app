@@ -3,7 +3,7 @@
 Decidim.configure do |config|
   config.application_name = "Multitenant Decideix"
 
-  config.mailer_sender = "decideix@decideix.com"
+  config.mailer_sender = "decidim@coditramuntana.com"
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
