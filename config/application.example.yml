@@ -4,6 +4,7 @@ default: &default
   DB_POOL: <%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>
   DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
   DB_DATABASE: "database name"
+  DB_TEST_DATABASE: "test database name"
   DB_USERNAME: "database username"
   DB_PASSWORD: "database password"
   # Mailer configuration
