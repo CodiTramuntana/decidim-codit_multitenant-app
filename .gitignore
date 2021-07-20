@@ -24,6 +24,6 @@ public/uploads
 /config/application.yml
 /RailsApplication1/nbproject/private/
 # Ignore deploy secrets
-/config/deploy/*
 /config/deploy.rb
+/config/deploy/*
 /Capfile

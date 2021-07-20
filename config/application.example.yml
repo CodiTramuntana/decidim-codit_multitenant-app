@@ -4,7 +4,7 @@ default: &default
   DB_POOL: <%= ENV.fetch("RAILS_MAX_THREADS") { "5" } %>
   DB_HOST: <%= ENV.fetch("DATABASE_HOST") { "localhost" } %>
   DB_DATABASE: "database name"
-  DB_TEST_DATABASE: "test database name"
+
   DB_USERNAME: "database username"
   DB_PASSWORD: "database password"
   # Mailer configuration
@@ -14,7 +14,7 @@ default: &default
   MAILER_SMTP_USER_NAME: "smtp email username"
   MAILER_SMTP_PASSWORD: "smtp email password"
   # GeoCoder configuration (developer.here.com)
-  HERE_API_KEY: "your here api key"
+
 
 development:
   <<: *default
@@ -28,4 +28,4 @@ staging:
   <<: *default
 
 production:
-  <<: *default
+
