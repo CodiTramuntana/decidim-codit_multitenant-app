@@ -54,7 +54,7 @@ psql -h localhost -U username database_project -f schema_migrations.sql
 
 ## 6. Pull changes from **clean_app**
 
-`git pull clean_app 0.2X-stable`
+`git pull clean_app 0.2X-stable --allow-unrelated-histories`
 
 Now you will have all migrations synchronized with the clean_app.
 
