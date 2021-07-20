@@ -30,7 +30,11 @@ COPY public.schema_migrations (version) FROM stdin;
 
 ## 3. Delete migrations from **project**
 
-You must leave in the code the migrations that are from other gems such as term_customizer, verifiers, modules, etc.
+You must leave in the code the migrations that are from other gems such as term_customizer, verifiers, modules, etc. To find those migrations you can run:
+
+```bash
+$ ls -lah db/migrate/ |grep -v ".decidim.rb"|grep -v "decidim_proposals.rb"|grep -v "decidim_meetings.rb"|grep -v "decidim_forms.rb"|grep -v "decidim_consultations.rb"|grep -v "decidim_initiatives.rb"|grep -v "decidim_blogs.rb"|grep -v "decidim_sortitions.rb"|grep -v "decidim_debates.rb"|grep -v "decidim_accountability.rb"|grep -v "decidim_budgets.rb"|grep -v "decidim_assemblies.rb"|grep -v "decidim_participatory_processes.rb"|grep -v "decidim_conferences.rb"|grep -v "decidim_comments"|grep -v "decidim_surveys"|grep -v "decidim_admin.rb"|grep -v "decidim_verifications.rb"|grep -v "decidim_pages.rb"|grep -v "decidim_system.rb"
+```
 
 
 ## 4. Delete migrations from schema_migrations table **project**
