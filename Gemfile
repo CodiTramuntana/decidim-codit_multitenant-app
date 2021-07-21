@@ -39,7 +39,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'decidim-dev', DECIDIM_VERSION
   gem 'web-console'
   gem 'listen', '~> 3.1.0'
   gem 'spring'
