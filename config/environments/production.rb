@@ -98,6 +98,7 @@ Rails.application.configure do
 
   if Rails.application.secrets.sendgrid
     config.action_mailer.default_options = {
+      "X-SMTPAPI" => {
         filters:  {
           clicktrack: { settings: { enable: 0 } },
           opentrack:  { settings: { enable: 0 } }
