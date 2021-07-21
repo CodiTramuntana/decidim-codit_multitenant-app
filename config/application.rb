@@ -20,9 +20,6 @@ module CoditMultitenantApp
     #   app.routes_reloader.paths << File.expand_path('../named_routes_overrides.rb',__FILE__)
     #   # this seems to cause these extra routes to be loaded last, so they will define named routes last.
     # end
-    config.active_job.queue_adapter = :delayed_job
-
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
