@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: e2502c7e7544d426d5844c8099fc60a463fb5f49
-  tag: v0.1.16
+  revision: 1f8bf6509feb5eda6b5d8af2c2df07ee64e829e7
+  tag: v0.1.17
   specs:
-    decidim-members (0.1.16)
+    decidim-members (0.1.17)
       decidim-core (>= 0.17.1)
       pg_search (>= 2.1.4)
 
@@ -17,13 +17,13 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git
-  revision: e2768d5e35d07990b1ee03a3fcf8bb83c1b53542
-  tag: v0.0.7
+  revision: 33b805e25169f0a37d4cf79c4975e3b368b03fbb
+  tag: v0.0.8
   specs:
-    decidim-verifications-csv_email (0.0.7)
-      decidim (>= 0.15.0)
-      decidim-admin (>= 0.15.0)
-      decidim-verifications (>= 0.15.0)
+    decidim-verifications-csv_email (0.0.8)
+      decidim (>= 0.0.23)
+      decidim-admin (>= 0.0.23)
+      decidim-verifications (>= 0.0.23)
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git
@@ -405,7 +405,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    css_parser (1.9.0)
+    css_parser (1.10.0)
       addressable
     daemons (1.3.1)
     date_validator (0.9.0)
@@ -482,7 +482,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.9.6)
       i18n (>= 0.7)
-    faraday (1.5.1)
+    faraday (1.7.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -490,6 +490,7 @@ GEM
       faraday-net_http (~> 1.0)
       faraday-net_http_persistent (~> 1.1)
       faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
     faraday-em_http (1.0.0)
@@ -499,6 +500,7 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
     ffi (1.15.3)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -524,12 +526,12 @@ GEM
       railties (>= 4.1, < 6.0)
       tzinfo (~> 1.2, >= 1.2.2)
     geocoder (1.6.7)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (0.5.2)
+      activesupport (>= 5.0)
     graphiql-rails (1.4.11)
       railties
       sprockets-rails
-    graphql (1.12.13)
+    graphql (1.12.14)
     hashdiff (1.0.1)
     hashie (4.1.0)
     highline (2.0.3)
@@ -625,7 +627,7 @@ GEM
     multipart-post (2.1.1)
     mustache (1.1.1)
     netrc (0.11.0)
-    nio4r (2.5.7)
+    nio4r (2.5.8)
     nobspw (0.6.2)
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
@@ -733,7 +735,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
-    rake (13.0.3)
+    rake (13.0.6)
     ransack (2.1.1)
       actionpack (>= 5.0)
       activerecord (>= 5.0)
@@ -749,7 +751,7 @@ GEM
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
-    redis (4.3.1)
+    redis (4.4.0)
     regexp_parser (2.1.1)
     request_store (1.5.0)
       rack (>= 1.4)
