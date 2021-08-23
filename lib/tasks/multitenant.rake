@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 namespace :orgs do
-
   # WARNING: Do not execute this task on the server!!!!!
   # It is meant to be executed locally, in a developer's machine. After downloading the database and public/uploads to the local environment.
   #
@@ -39,13 +38,13 @@ namespace :orgs do
   # Images and attachments are automatically removed when destroying its respective models.
   # Do not use `delete`. Use always `destroy` to be sure all attachments and associated models are destroyed in cascade.
   task :keep_only_org, [:org_id] => [:environment] do |_task, args|
-    locale= I18n.locale.to_s
+    locale = I18n.locale.to_s
     puts "Showing info with locale: #{locale}"
 
-    org_id= args.org_id
+    org_id = args.org_id
     puts "Saving Org ID: #{org_id}... cleaning all other organizations data"
 
-    organizations_to_clean= Decidim::Organization.where.not(id: org_id)
+    organizations_to_clean = Decidim::Organization.where.not(id: org_id)
     organizations_to_clean.each do |org|
       puts ">> Removing Org #{org.id} - #{org.host} - #{org.name}"
       # clean admin logs with delete_all to skip before_destroy callback
@@ -57,7 +56,7 @@ namespace :orgs do
       Decidim::Metric.where(organization: org).delete_all
 
       # ParticipatoryProcesses
-      processes_to_clean= Decidim::ParticipatoryProcess.where(organization: org).load
+      processes_to_clean = Decidim::ParticipatoryProcess.where(organization: org).load
       puts "* Cleaning processes..."
       processes_to_clean.each do |process|
         # ParticipatoryProcessSteps have dependent: destroy
@@ -73,63 +72,63 @@ namespace :orgs do
       end
 
       # Assemblies
-      assemblies_to_clean= Decidim::Assembly.where(organization: org).load
+      assemblies_to_clean = Decidim::Assembly.where(organization: org).load
       puts "* Cleaning assemblies..."
       assemblies_to_clean.each do |assembly|
-          clean_space(assembly)
-          Decidim::AssemblyMember.where(assembly: assembly).destroy_all
-          Decidim::AssemblyUserRole.where(assembly: assembly).destroy_all
-          assembly.destroy!
+        clean_space(assembly)
+        Decidim::AssemblyMember.where(assembly: assembly).destroy_all
+        Decidim::AssemblyUserRole.where(assembly: assembly).destroy_all
+        assembly.destroy!
       end
       Decidim::AssembliesType.where(organization: org).destroy_all
       Decidim::AssembliesSetting.where(organization: org).destroy_all
 
-      # TODO initiatives
+      # TODO: initiatives
       Decidim::InitiativesType.where(organization: org).destroy_all
 
       # Conferences
-      conferences_to_clean= Decidim::Conference.where(organization: org).load
+      conferences_to_clean = Decidim::Conference.where(organization: org).load
       puts "* Cleaning conferences..."
       conferences_to_clean.each do |conference|
-          clean_space(conference)
-          # dependent: :destroy: speakers, partners, conference_registrations, conference_invites, media_links, registration_types
-          conference.registration_types.each do |registration_type|
-            registration_type.conference_meetings.each do |meeting|
-              destroy_meeting_resource(meeting)
-            end
+        clean_space(conference)
+        # dependent: :destroy: speakers, partners, conference_registrations, conference_invites, media_links, registration_types
+        conference.registration_types.each do |registration_type|
+          registration_type.conference_meetings.each do |meeting|
+            destroy_meeting_resource(meeting)
           end
-          Decidim::ConferenceUserRole.where(conference: conference).destroy_all
-          conference.destroy!
+        end
+        Decidim::ConferenceUserRole.where(conference: conference).destroy_all
+        conference.destroy!
       end
 
       # Consultations
-      consultations_to_clean= Decidim::Consultation.where(organization: org).load
+      consultations_to_clean = Decidim::Consultation.where(organization: org).load
       puts "* Cleaning consultations..."
       consultations_to_clean.each do |consultation|
-          clean_resource_links(consultation)
-          clean_resource_permissions(consultation)
-          # dependent: :destroy: questions, votes, responses, response_groups, categories
-          consultation.questions.each do |question|
-            clean_space(question)
-            clean_comments_from(question)
-            clean_follows(question)
-            question.destroy!
-          end
-          consultation.destroy!
+        clean_resource_links(consultation)
+        clean_resource_permissions(consultation)
+        # dependent: :destroy: questions, votes, responses, response_groups, categories
+        consultation.questions.each do |question|
+          clean_space(question)
+          clean_comments_from(question)
+          clean_follows(question)
+          question.destroy!
+        end
+        consultation.destroy!
       end
 
       puts "* Cleaning newsletters..."
       Decidim::Newsletter.where(organization: org).destroy_all
 
       puts "* Cleaning users..."
-      org_users= Decidim::User.where(organization: org)
+      org_users = Decidim::User.where(organization: org)
       Decidim::Authorization.where(user: org_users).destroy_all
       Decidim::ImpersonationLog.where(user: org_users).destroy_all
       clean_messages_and_conversations(org_users)
       Decidim::Notification.where(user: org_users).destroy_all
       Decidim::Gamification::BadgeScore.where(user: org_users).destroy_all
       org_users.destroy_all
-      org_user_groups= Decidim::UserGroup.where(organization: org)
+      org_user_groups = Decidim::UserGroup.where(organization: org)
       clean_messages_and_conversations(org_user_groups)
       Decidim::Notification.where(user: org_user_groups).destroy_all
       Decidim::Gamification::BadgeScore.where(user: org_user_groups).destroy_all
@@ -147,16 +146,14 @@ namespace :orgs do
       Decidim::FileAuthorizationHandler::CensusDatum.where(organization: org).destroy_all
       # Term customizer
       puts "* Cleaning term customizer..."
-      translation_sets= Decidim::TermCustomizer::Constraint.where(organization: org).collect do |constraint|
-        constraint.translation_set
-      end
-      translation_sets.flatten.each { |set| set.destroy! } # constraints and translations are dependant: :destroy
+      translation_sets = Decidim::TermCustomizer::Constraint.where(organization: org).collect(&:translation_set)
+      translation_sets.flatten.each(&:destroy!) # constraints and translations are dependant: :destroy
       puts "* Remove Orphan comments"
       Decidim::Comments::Comment.find_each { |comment| comment.destroy! unless comment.author }
 
       begin
         org.destroy!
-      rescue Exception => e
+      rescue StandardError => e
         # byebug
         puts "Error message: #{e.message}"
         puts "Record errors: #{e&.record&.errors}"
@@ -192,6 +189,7 @@ namespace :orgs do
     Decidim::System::Admin.destroy_all
   end
 
+  # rubocop: disable Metrics/CyclomaticComplexity
   def clean_space(space)
     puts "cleaning space: #{[space.id, space.class.name, space.title[I18n.locale.to_s]]}"
     Decidim::Category.where(participatory_space: space).destroy_all
@@ -201,30 +199,31 @@ namespace :orgs do
     space.components.each do |component|
       puts "cleaning #{component.manifest_name} component: #{component.id} from organization #{component.organization.id}"
       case component.manifest_name
-      when 'surveys'
+      when "surveys"
         clean_surveys(component)
-      when 'accountability'
+      when "accountability"
         clean_accountability(component)
-      when 'pages'
+      when "pages"
         clean_pages(component)
-      when 'meetings'
+      when "meetings"
         clean_meetings(component)
-      when 'debates'
+      when "debates"
         clean_debates(component)
-      when 'budgets'
+      when "budgets"
         clean_budgets(component)
-      when 'proposals'
+      when "proposals"
         clean_proposals(component)
-      when 'sortitions'
+      when "sortitions"
         clean_sortitions(component)
       else
         raise "Cleaning for #{component.manifest_name} components is not implemented!"
       end
     end
   end
+  # rubocop: enable Metrics/CyclomaticComplexity
 
   def clean_accountability(component)
-    statuses= Decidim::Accountability::Status.where(component: component)
+    statuses = Decidim::Accountability::Status.where(component: component)
     statuses.each do |status|
       status.results.each do |result|
         clean_resource_links(result)
@@ -239,7 +238,7 @@ namespace :orgs do
   end
 
   def clean_budgets(component)
-    budgets= Decidim::Budgets::Budget.where(component: component)
+    budgets = Decidim::Budgets::Budget.where(component: component)
     budgets.each do |budget|
       clean_budget(budget)
     end
@@ -258,6 +257,7 @@ namespace :orgs do
     # projects and orders are dependent: destroy
     budget.destroy!
   end
+
   def clean_project(project)
     clean_resource_links(project)
     clean_comments_from(project)
@@ -265,10 +265,11 @@ namespace :orgs do
   end
 
   def clean_debates(component)
-    debates= Decidim::Debates::Debate.where(component: component)
+    debates = Decidim::Debates::Debate.where(component: component)
     debates.find_each { |debate| clean_debate(debate) }
     puts "destroying debates component #{component.id}: #{component.destroy!}"
   end
+
   def clean_debate(debate)
     clean_resource_links(debate)
     clean_resource_permissions(debate)
@@ -279,7 +280,7 @@ namespace :orgs do
   end
 
   def clean_meetings(component)
-    meetings= Decidim::Meetings::Meeting.where(component: component)
+    meetings = Decidim::Meetings::Meeting.where(component: component)
     meetings.each do |meeting|
       destroy_meeting_resource(meeting)
     end
@@ -303,7 +304,7 @@ namespace :orgs do
   end
 
   def clean_pages(component)
-    pages= Decidim::Pages::Page.where(component: component)
+    pages = Decidim::Pages::Page.where(component: component)
     pages.each do |page|
       clean_resource_links(page)
       clean_resource_permissions(page)
@@ -315,7 +316,7 @@ namespace :orgs do
   def clean_proposals(component)
     Decidim::Proposals::ParticipatoryText.where(component: component).destroy_all
 
-    collaborative_drafts= Decidim::Proposals::CollaborativeDraft.where(component: component)
+    collaborative_drafts = Decidim::Proposals::CollaborativeDraft.where(component: component)
     collaborative_drafts.each do |draft|
       # coauthorships has dependent: destroy
       # collaborator_requests has dependent: :destroy
@@ -326,7 +327,7 @@ namespace :orgs do
       draft.destroy!
     end
 
-    proposals= Decidim::Proposals::CollaborativeDraft.where(component: component)
+    proposals = Decidim::Proposals::CollaborativeDraft.where(component: component)
     proposals.each { |proposal| clean_proposal(proposal) }
 
     puts "destroying proposals component #{component.id}: #{component.destroy!}"
@@ -346,7 +347,7 @@ namespace :orgs do
   end
 
   def clean_sortitions(component)
-    sortitions= Decidim::Sortitions::Sortition.where(component: component)
+    sortitions = Decidim::Sortitions::Sortition.where(component: component)
     sortitions.each do |sortition|
       clean_comments_from(sortition)
       clean_resource_links(sortition)
@@ -360,12 +361,13 @@ namespace :orgs do
   # decidim_forms_questions -> all dependant destroy
   # answers -> dependant AnswerChoice destroy
   def clean_surveys(component)
-    surveys= Decidim::Surveys::Survey.where(component: component)
+    surveys = Decidim::Surveys::Survey.where(component: component)
     surveys.each { |survey| clean_survey(survey) }
     puts "destroying surveys component #{component.id}: #{component.destroy!}"
   end
+
   def clean_survey(survey)
-    questionnaire= Decidim::Forms::Questionnaire.find_by(questionnaire_for: survey)
+    questionnaire = Decidim::Forms::Questionnaire.find_by(questionnaire_for: survey)
     questionnaire.destroy!
     clean_resource_links(survey)
     clean_resource_permissions(survey)
@@ -374,7 +376,10 @@ namespace :orgs do
   end
 
   def clean_comments_from(commentable)
-    Decidim::Comments::Comment.where(root_commentable: commentable).find_each {|comment| clean_moderations_from(comment); comment.delete}
+    Decidim::Comments::Comment.where(root_commentable: commentable).find_each do |comment|
+      clean_moderations_from(comment)
+      comment.delete
+    end
     # Decidim::Comments::Comment.where(commentable: commentable).find_each {|comment| clean_moderations_from(comment); comment.destroy!}
   end
 

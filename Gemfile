@@ -1,47 +1,46 @@
 # frozen_string_literal: true
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: 'https://github.com/CodiTramuntana/decidim.git', branch: 'release/0.24-stable' }
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.24-stable" }.freeze
 
-gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-sortitions", DECIDIM_VERSION
-gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.17"
-gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.8"
+gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-file_authorization_handler", git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
+gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.17"
+gem "decidim-sortitions", DECIDIM_VERSION
 gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
+gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.8"
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.2"
-gem 'sanitize', '~> 5.2'
+gem "sanitize", "~> 5.2"
 
-
-gem 'daemons'
-gem 'delayed_job_active_record'
-gem 'puma'
-gem 'uglifier', '>= 1.3.0'
+gem "daemons"
+gem "delayed_job_active_record"
+gem "puma"
+gem "uglifier", ">= 1.3.0"
 gem "whenever", require: false
 
-gem 'figaro', '>= 1.1.1'
-gem 'openssl'
+gem "figaro", ">= 1.1.1"
+gem "openssl"
 
-gem 'decidim', DECIDIM_VERSION
+gem "decidim", DECIDIM_VERSION
 
 group :development, :test do
-  gem 'better_errors', '>= 2.3.0'
-  gem 'binding_of_caller'
-  gem 'byebug', platform: :mri
-  gem 'faker', '~> 1.9.1'
+  gem "better_errors", ">= 2.3.0"
+  gem "binding_of_caller"
+  gem "byebug", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
-  gem 'whenever-test'
+  gem "faker", "~> 1.9.1"
+  gem "whenever-test"
 end
 
 group :development do
-  gem 'web-console'
-  gem 'listen', '~> 3.1.0'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'letter_opener_web', '~> 1.3.0'
+  gem "letter_opener_web", "~> 1.3.0"
+  gem "listen", "~> 3.1.0"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "web-console"
 end
