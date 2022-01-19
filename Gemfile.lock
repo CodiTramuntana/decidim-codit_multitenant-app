@@ -1,11 +1,13 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: 1f8bf6509feb5eda6b5d8af2c2df07ee64e829e7
-  tag: v0.1.17
+  revision: 224d65642ab7b6b3843e9f316891f4f7eea2d625
+  tag: v0.1.18
   specs:
-    decidim-members (0.1.17)
-      decidim-core (>= 0.17.1)
+    decidim-members (0.1.18)
+      decidim-core (>= 0.23.0)
+      nokogiri (>= 1.12.5)
       pg_search (>= 2.1.4)
+      puma (>= 5.5.1)
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-term_customizer
@@ -17,13 +19,15 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git
-  revision: 33b805e25169f0a37d4cf79c4975e3b368b03fbb
-  tag: v0.0.8
+  revision: 88a0d8fcbf2352edb0c69635524a5a3f11463419
+  tag: v0.0.9
   specs:
-    decidim-verifications-csv_email (0.0.8)
+    decidim-verifications-csv_email (0.0.9)
       decidim (>= 0.0.23)
       decidim-admin (>= 0.0.23)
       decidim-verifications (>= 0.0.23)
+      nokogiri (>= 1.12.5)
+      puma (>= 5.5.1)
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git
