@@ -12,7 +12,7 @@ gem "decidim-file_authorization_handler", git: "https://github.com/MarsBased/dec
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.18"
 gem "decidim-sortitions", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/CodiTramuntana/decidim-module-term_customizer"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: '0.24-stable'
 gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.9"
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.2"
 gem "sanitize", "~> 5.2"
