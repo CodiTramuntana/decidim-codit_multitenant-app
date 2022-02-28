@@ -10,8 +10,8 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: 224d65642ab7b6b3843e9f316891f4f7eea2d625
-  tag: v0.1.18
+  revision: 4810ffe49e99529165b3c02f4c2b56899d957a94
+  branch: 0.25-stable
   specs:
     decidim-members (0.1.18)
       decidim-core (>= 0.23.0)
@@ -21,13 +21,13 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git
-  revision: 88a0d8fcbf2352edb0c69635524a5a3f11463419
-  tag: v0.0.9
+  revision: fa06c0ff412e9712d452f14f3cfb1a8ebb784763
+  branch: 0.25-stable
   specs:
     decidim-verifications-csv_email (0.0.9)
-      decidim (>= 0.0.23)
-      decidim-admin (>= 0.0.23)
-      decidim-verifications (>= 0.0.23)
+      decidim (>= 0.25.2)
+      decidim-admin (>= 0.25.2)
+      decidim-verifications (>= 0.25.2)
       nokogiri (>= 1.12.5)
       puma (>= 5.5.1)
 
