@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/CodiTramuntana/decidim-file_authorization_handler.git
-  revision: acd8b03dfc50f950be8d434f04419491f8292981
-  branch: 0.25-stable
+  revision: a9aa4311460123c5d0e991faf96479b250098d53
+  tag: v0.25.2
   specs:
     decidim-file_authorization_handler (0.25.2)
       decidim (~> 0.25.2)
@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: 4810ffe49e99529165b3c02f4c2b56899d957a94
-  branch: 0.25-stable
+  revision: a8d2e199549df86f8a3e522fd0a98eeab6a70986
+  tag: v0.1.19
   specs:
-    decidim-members (0.1.18)
+    decidim-members (0.1.19)
       decidim-core (>= 0.23.0)
       nokogiri (>= 1.12.5)
       pg_search (>= 2.1.4)
@@ -21,10 +21,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git
-  revision: fa06c0ff412e9712d452f14f3cfb1a8ebb784763
-  branch: 0.25-stable
+  revision: 56ed43d0e3a90f84f97e0bbae2b6eec3a7070b38
+  tag: v0.0.10
   specs:
-    decidim-verifications-csv_email (0.0.9)
+    decidim-verifications-csv_email (0.0.10)
       decidim (>= 0.25.2)
       decidim-admin (>= 0.25.2)
       decidim-verifications (>= 0.25.2)
@@ -33,10 +33,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git
-  revision: 35786bce432ed6ba75ef21d6594016d234d7598d
-  branch: 0.25-stable
+  revision: e4717c8cd4cc40c0fcee6e981f81581985af2b5e
+  tag: v0.1.0
   specs:
-    decidim-verifications-sant_boi_census (0.0.2)
+    decidim-verifications-sant_boi_census (0.1.0)
       decidim-core (~> 0.25.2)
       decidim-verifications (~> 0.25.2)
       rails (>= 5.2)
