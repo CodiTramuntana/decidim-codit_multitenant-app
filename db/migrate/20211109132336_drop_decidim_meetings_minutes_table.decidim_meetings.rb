@@ -23,22 +23,24 @@ class DropDecidimMeetingsMinutesTable < ActiveRecord::Migration[6.0]
       minutes = Minutes.find_by(id: action_log.resource_id)
       version = Version.find_by(id: action_log.version_id)
 
-      version_updates = {
-        item_type: "Decidim::Meetings::Meeting",
-        item_id: minutes.decidim_meeting_id
-      }
-      if version.object_changes.present?
-        version_updates[:object_changes] = version.object_changes
-                                                  .gsub("\ndescription:\n-\n-", "\nminutes_description:\n-\n-")
-                                                  .gsub("\ndescription:\n-\n-", "\nminutes_description:\n-\n-")
+      if minutes.present? && version.present?
+        version_updates = {
+          item_type: "Decidim::Meetings::Meeting",
+          item_id: minutes.decidim_meeting_id
+        }
+        if version.object_changes.present?
+          version_updates[:object_changes] = version.object_changes
+                                                    .gsub("\ndescription:\n-\n-", "\nminutes_description:\n-\n-")
+                                                    .gsub("\ndescription:\n-\n-", "\nminutes_description:\n-\n-")
+        end
+        
+        version.update!(version_updates)
+        action_log.update!(
+          resource_type: "Decidim::Meetings::Meeting",
+          resource_id: minutes.decidim_meeting_id,
+          action: "close"
+        )
       end
-
-      version.update!(version_updates)
-      action_log.update!(
-        resource_type: "Decidim::Meetings::Meeting",
-        resource_id: minutes.decidim_meeting_id,
-        action: "close"
-      )
     end
 
     drop_table :decidim_meetings_minutes
