@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_11_110935) do
+ActiveRecord::Schema.define(version: 2022_03_11_111390) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -921,6 +921,7 @@ ActiveRecord::Schema.define(version: 2022_03_11_110935) do
     t.jsonb "online_votes", default: {}
     t.jsonb "offline_votes", default: {}
     t.integer "comments_count", default: 0, null: false
+    t.integer "follows_count", default: 0, null: false
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_area_id"], name: "index_decidim_initiatives_on_decidim_area_id"
