@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_11_110359) do
+ActiveRecord::Schema.define(version: 2022_03_11_110935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -500,7 +500,6 @@ ActiveRecord::Schema.define(version: 2022_03_11_110359) do
     t.string "main_logo"
     t.date "sign_date"
     t.datetime "diploma_sent_at"
-    t.integer "follows_count", default: 0, null: false
     t.index ["decidim_organization_id", "slug"], name: "index_unique_conference_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_conferences_on_decidim_organization_id"
     t.index ["decidim_scope_id"], name: "index_decidim_conferences_on_decidim_scope_id"
@@ -922,7 +921,6 @@ ActiveRecord::Schema.define(version: 2022_03_11_110359) do
     t.jsonb "online_votes", default: {}
     t.jsonb "offline_votes", default: {}
     t.integer "comments_count", default: 0, null: false
-    t.integer "follows_count", default: 0, null: false
     t.index "md5((description)::text)", name: "decidim_initiatives_description_search"
     t.index ["answered_at"], name: "index_decidim_initiatives_on_answered_at"
     t.index ["decidim_area_id"], name: "index_decidim_initiatives_on_decidim_area_id"
