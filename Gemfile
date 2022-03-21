@@ -4,17 +4,17 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.24-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.25-stable" }.freeze
 
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
-gem "decidim-file_authorization_handler", git: "https://github.com/MarsBased/decidim-file_authorization_handler.git"
+gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.25.2"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.18"
+gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.19"
 gem "decidim-sortitions", DECIDIM_VERSION
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "0.24-stable"
-gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.9"
-gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.0.2"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
+gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.10"
+gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.0"
 gem "sanitize", "~> 5.2"
 
 gem "daemons"
@@ -33,12 +33,12 @@ group :development, :test do
   gem "binding_of_caller"
   gem "byebug", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
-  gem "faker", "~> 1.9.1"
+  gem "faker"
   gem "whenever-test"
 end
 
 group :development do
-  gem "letter_opener_web", "~> 1.3.0"
+  gem "letter_opener_web"
   gem "listen", "~> 3.1.0"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"

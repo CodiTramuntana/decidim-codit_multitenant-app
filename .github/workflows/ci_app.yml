@@ -9,7 +9,8 @@ on:
   pull_request:
 
 env:
-  RUBY_VERSION: 2.7.3
+  RUBY_VERSION: 2.7.5
+  NODE_VERSION: 16.9.1
 
 jobs:
   test:
@@ -26,6 +27,9 @@ jobs:
           --health-retries 5
         env:
           POSTGRES_PASSWORD: postgres
+      redis:
+        image: redis:3.2-alpine
+        ports: ["6379:6379"]
     env:
       DB_HOST: localhost
       DB_PORT: "5432"
@@ -33,6 +37,8 @@ jobs:
       DB_TEST_DATABASE: codit_multitenant_test
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
+      SECRET_KEY_BASE: "secret_key_base"
+
     steps:
       - uses: actions/checkout@v2.0.0
         with:
@@ -41,6 +47,11 @@ jobs:
       - uses: ruby/setup-ruby@master
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - run: npm install
 
       - name: Recover Ruby dependency cache
         uses: actions/cache@v1
@@ -50,9 +61,6 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-app-rubydeps-${{ env.cache-name }}-
             ${{ runner.OS }}-app-rubydeps-
-
-      - name: Set bundle local config vendor/bundle path
-        run: bundle config set --local path 'vendor/bundle'
 
       - name: Install Ruby deps
         uses: nick-invision/retry@v2
@@ -66,7 +74,6 @@ jobs:
         run: |
           RAILS_ENV=test bundle exec rails db:create
           RAILS_ENV=test bundle exec rails db:migrate
-          RAILS_ENV=test bundle exec rails assets:precompile
 
       - name: Run RSpec
         uses: nick-invision/retry@v2
