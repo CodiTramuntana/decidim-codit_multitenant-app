@@ -28,7 +28,7 @@ gem "openssl"
 
 gem "decidim", DECIDIM_VERSION
 
-gem "nokogiri ",">= v1.13.4"
+gem "nokogiri",">= 1.13.4"
 
 group :development, :test do
   gem "better_errors", ">= 2.3.0"
