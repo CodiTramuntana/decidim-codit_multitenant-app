@@ -6,7 +6,8 @@
     "@decidim/core": "file:packages/core",
     "@decidim/elections": "file:packages/elections",
     "@decidim/webpacker": "file:packages/webpacker",
-    "ejs": ">=3.1.7"
+    "underscore": ">=1.12.1"
+    
   },
   "version": "0.1.0",
   "engines": {
@@ -24,6 +25,6 @@
     "@decidim/dev": "file:packages/dev",
     "@decidim/eslint-config": "file:packages/eslint-config",
     "@decidim/stylelint-config": "file:packages/stylelint-config",
-    "ejs": ">=3.1.7"
+    "underscore": ">=1.12.1"
   }
 }
