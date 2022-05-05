@@ -28,6 +28,8 @@ gem "openssl"
 
 gem "decidim", DECIDIM_VERSION
 
+gem "nokogiri", ">= 1.13.4"
+
 group :development, :test do
   gem "better_errors", ">= 2.3.0"
   gem "binding_of_caller"
