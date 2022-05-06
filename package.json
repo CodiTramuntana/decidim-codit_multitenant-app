@@ -6,9 +6,9 @@
     "@decidim/core": "file:packages/core",
     "@decidim/elections": "file:packages/elections",
     "@decidim/webpacker": "file:packages/webpacker",
+    "yargs-parser": ">=5.0.1",
     "node-forge": ">=1.3.0",
-    "nth-check": ">=2.0.1",
-    "yargs-parser": ">=5.0.1"
+    "nth-check": ">=2.0.1"
   },
   "version": "0.1.0",
   "engines": {
@@ -26,6 +26,7 @@
     "@decidim/dev": "file:packages/dev",
     "@decidim/eslint-config": "file:packages/eslint-config",
     "@decidim/stylelint-config": "file:packages/stylelint-config",
+    "yargs-parser": ">=5.0.1",
     "node-forge": ">=1.3.0",
     "nth-check": ">=2.0.1"
   }
