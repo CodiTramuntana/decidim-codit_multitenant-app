@@ -34,6 +34,7 @@
     "leaflet-svgicon": "^0.0.2",
     "leaflet-tilelayer-here": "1.0.2",
     "leaflet.markercluster": "1.4.1",
+    "marked":"^4.0.10",
     "moment": "2.29.2",
     "morphdom": "2.6.1",
     "prop-types": "^15.7.2",
