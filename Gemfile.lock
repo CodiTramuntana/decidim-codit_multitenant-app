@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim.git
-  revision: 0c022c867b9e71ad6e7ae7a31d983dfc28e710b8
+  revision: 0d06cf0adf8f3177279052e5176ae4dfe64fa6bf
   branch: release/0.25-stable
   specs:
     decidim (0.25.2)
@@ -325,7 +325,7 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     batch-loader (1.5.0)
-    bcrypt (3.1.17)
+    bcrypt (3.1.18)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -344,7 +344,7 @@ GEM
     browser (2.7.1)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.36.0)
+    capybara (3.37.1)
       addressable
       matrix
       mini_mime (>= 0.1.3)
@@ -369,7 +369,7 @@ GEM
     cells-erb (0.1.0)
       cells (~> 4.0)
       erbse (>= 0.1.1)
-    cells-rails (0.1.4)
+    cells-rails (0.1.5)
       actionpack (>= 5.0)
       cells (>= 4.1.6, < 5.0.0)
     charlock_holmes (0.7.7)
@@ -447,7 +447,7 @@ GEM
     erbse (0.1.4)
       temple
     erubi (1.10.0)
-    etherpad-lite (0.3.0)
+    etherpad-lite (0.3.1)
       rest-client (>= 1.6)
     excon (0.92.3)
     execjs (2.8.1)
@@ -458,10 +458,10 @@ GEM
       railties (>= 3.0.0)
     faker (2.20.0)
       i18n (>= 1.8.11, < 2)
-    faraday (2.2.0)
+    faraday (2.3.0)
       faraday-net_http (~> 2.0)
       ruby2_keywords (>= 0.0.4)
-    faraday-net_http (2.0.2)
+    faraday-net_http (2.0.3)
     ffi (1.15.5)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -481,7 +481,7 @@ GEM
       activemodel (>= 4.1, < 7.1)
       activesupport (>= 4.1, < 7.1)
       railties (>= 4.1, < 7.1)
-    geocoder (1.7.5)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     graphql (1.13.12)
@@ -514,7 +514,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (0.13.0)
       rails (>= 3.2.0)
-    json (2.6.1)
+    json (2.6.2)
     jwt (2.3.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
@@ -528,7 +528,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    kramdown (2.3.2)
+    kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -576,11 +576,11 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
     nobspw (0.6.2)
-    nokogiri (1.13.4-x86_64-linux)
+    nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     nokogumbo (2.0.5)
       nokogiri (~> 1.8, >= 1.8.4)
-    oauth (0.5.8)
+    oauth (0.5.10)
     oauth2 (1.4.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -624,7 +624,7 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-    premailer (1.15.0)
+    premailer (1.16.0)
       addressable
       css_parser (>= 1.6.0)
       htmlentities (>= 4.0.0)
@@ -696,7 +696,7 @@ GEM
       wisper (>= 1.6.1)
     redcarpet (3.5.1)
     redis (4.6.0)
-    regexp_parser (2.3.1)
+    regexp_parser (2.4.0)
     request_store (1.5.1)
       rack (>= 1.4)
     responders (3.0.1)
@@ -748,7 +748,7 @@ GEM
       rubocop-ast (>= 0.5.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
-    rubocop-ast (1.17.0)
+    rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
     rubocop-rails (2.9.1)
       activesupport (>= 4.2.0)
@@ -760,7 +760,7 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
-    rubyXL (3.4.23)
+    rubyXL (3.4.25)
       nokogiri (>= 1.10.8)
       rubyzip (>= 1.3.0)
     ruby_dep (1.5.0)
@@ -860,7 +860,7 @@ GEM
       whenever
     wicked (1.4.0)
       railties (>= 3.0.7)
-    wicked_pdf (2.1.0)
+    wicked_pdf (2.6.3)
       activesupport
     wisper (2.0.1)
     wisper-rspec (1.1.0)
@@ -893,7 +893,7 @@ DEPENDENCIES
   figaro (>= 1.1.1)
   letter_opener_web
   listen (~> 3.1.0)
-  nokogiri (>= 1.13.4)
+  nokogiri (= 1.13.3)
   openssl
   puma
   sanitize (~> 5.2)
