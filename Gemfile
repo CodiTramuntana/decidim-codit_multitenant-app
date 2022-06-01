@@ -32,7 +32,7 @@ gem "decidim", DECIDIM_VERSION
 
 # Remove this nokogiri forces version at any time but make sure that no __truncato_root__ text appears in the cards in general.
 # More exactly in comments in the homepage and in processes cards in the processes listing
-gem "nokogiri", "= 1.13.3"
+gem "nokogiri", "1.13.6"
 
 group :development, :test do
   gem "better_errors", ">= 2.3.0"
