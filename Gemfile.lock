@@ -402,6 +402,10 @@ GEM
       activesupport (>= 4.0, < 7)
       rspec (~> 3.0)
     debug_inspector (1.1.0)
+    decidim-decidim_awesome (0.8.3)
+      decidim-admin (>= 0.25.0, < 0.27)
+      decidim-core (>= 0.25.0, < 0.27)
+      sassc (~> 2.3)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -769,6 +773,8 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.8.0)
       nokogumbo (~> 2.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     searchlight (4.1.0)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
@@ -880,6 +886,7 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-consultations!
+  decidim-decidim_awesome (~> 0.8.0)
   decidim-dev!
   decidim-file_authorization_handler!
   decidim-initiatives!
