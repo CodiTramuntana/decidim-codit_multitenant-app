@@ -886,7 +886,7 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-consultations!
-  decidim-decidim_awesome (~> 0.8.0)
+  decidim-decidim_awesome (~> 0.8.3)
   decidim-dev!
   decidim-file_authorization_handler!
   decidim-initiatives!
