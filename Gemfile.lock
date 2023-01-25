@@ -21,10 +21,10 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git
-  revision: 56ed43d0e3a90f84f97e0bbae2b6eec3a7070b38
-  tag: v0.0.10
+  revision: 2a6b6d3352c3f90c5c9fe7a7b23a1c6a918e2668
+  tag: v0.0.11
   specs:
-    decidim-verifications-csv_email (0.0.10)
+    decidim-verifications-csv_email (0.0.11)
       decidim (>= 0.25.2)
       decidim-admin (>= 0.25.2)
       decidim-verifications (>= 0.25.2)
