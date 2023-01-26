@@ -16,6 +16,12 @@ Decidim.configure do |config|
     api_key: Rails.application.secrets.maps[:here_api_key],
     static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
   }
+
+  # Max requests in a time period to prevent DoS attacks. Only applied on production.
+  config.throttling_max_requests = Rails.application.secrets.decidim[:throttling_max_requests].to_i
+
+  # Time window in which the throttling is applied.
+  config.throttling_period = Rails.application.secrets.decidim[:throttling_period].to_i.minutes
 end
 
 # Inform Decidim about the assets folder
