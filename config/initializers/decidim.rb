@@ -6,9 +6,6 @@ Decidim.configure do |config|
 
   # The email that will be used as sender in all emails from Decidim
   config.mailer_sender = Rails.application.secrets.decidim[:mailer_sender]
-  # Change these lines to set your preferred locales
-  config.default_locale = :en
-  config.available_locales = [:en, :ca, :es, :eu, :fi, :fr, :gl, :it, :nl, :pt, :ru, :sv, :uk]
 
   # Sets the list of available locales for the whole application.
   #
@@ -17,7 +14,7 @@ Decidim.configure do |config|
   # of languages will be equal or a subset of the list in this file.
   # config.available_locales = Rails.application.secrets.decidim[:available_locales].presence || [:en]
   # Or block set it up manually and prevent ENV manipulation:
-  config.available_locales = %w(ca en es)
+  config.available_locales = %w(en ca es eu fi fr gl it nl pt ru sv uk)
 
   # Sets the default locale for new organizations. When creating a new
   # organization from the System area, system admins will be able to overwrite
