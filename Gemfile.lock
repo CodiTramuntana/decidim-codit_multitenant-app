@@ -9,18 +9,17 @@ GIT
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-members.git
-  revision: a8d2e199549df86f8a3e522fd0a98eeab6a70986
-  tag: v0.1.19
+  revision: b3de617f5cdf926dda1b963290bc973bfaf372dd
+  branch: compatible_with_decidim_0_27
   specs:
-    decidim-members (0.1.19)
-      decidim-core (>= 0.23.0)
-      nokogiri (>= 1.12.5)
+    decidim-members (0.2.0)
+      decidim-core (>= 0.27.0)
       pg_search (>= 2.1.4)
-      puma (>= 5.5.1)
 
 GIT
   remote: https://github.com/CodiTramuntana/decidim-module-survey_results
-  revision: ddf4b030e4ec4c08807230627d6566e66a75b9fd
+  revision: 4f704457ab690b1b08dad41e5366e57b7bd4612c
+  branch: dep/require_deface
   specs:
     decidim-survey_results (0.0.1)
       decidim-core (>= 0.27.2)

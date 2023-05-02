@@ -10,9 +10,9 @@ gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.19"
+gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", branch: "compatible_with_decidim_0_27"
 gem "decidim-sortitions", DECIDIM_VERSION
-gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
+gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results", branch: "dep/require_deface"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "master"
 gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.11"
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.4"
