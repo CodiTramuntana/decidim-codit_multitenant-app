@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20201218144706)
 
 class UpdateTableBlockUserFunctionality < ActiveRecord::Migration[5.2]

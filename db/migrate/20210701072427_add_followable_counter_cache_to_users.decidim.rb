@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20210310120640)
 
 class AddFollowableCounterCacheToUsers < ActiveRecord::Migration[5.2]

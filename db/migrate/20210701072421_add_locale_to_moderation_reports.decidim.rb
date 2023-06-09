@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20201019074554)
 
 class AddLocaleToModerationReports < ActiveRecord::Migration[5.2]

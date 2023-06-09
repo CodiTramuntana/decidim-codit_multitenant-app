@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_assemblies (originally 20210310120444)
 
 class AddFollowableCounterCacheToAssemblies < ActiveRecord::Migration[5.2]

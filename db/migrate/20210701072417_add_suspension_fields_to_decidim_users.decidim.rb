@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20201010224433)
 
 class AddSuspensionFieldsToDecidimUsers < ActiveRecord::Migration[5.2]

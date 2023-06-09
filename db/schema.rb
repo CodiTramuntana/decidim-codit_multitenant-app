@@ -17,10 +17,7 @@ ActiveRecord::Schema.define(version: 2023_04_27_092953) do
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
   enable_extension "unaccent"
-
   create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
