@@ -13,7 +13,7 @@ gem "decidim-sortitions", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
-gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.19"
+gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
 gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
 gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.11"
@@ -22,11 +22,14 @@ gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramun
 # temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
 gem "psych", "< 4"
 
+# Required gem from decidim-members
+gem "sanitize"
+
 gem "figaro", ">= 1.1.1"
 gem "openssl"
 
-gem "uglifier", ">= 1.3.0"
 gem "puma"
+gem "uglifier", ">= 1.3.0"
 gem "webpacker"
 
 # if deploying to a dedicated server
@@ -45,7 +48,8 @@ gem "whenever"
 # endif
 
 group :development, :test do
-  gem "better_errors"
+  # Fixed to 2.9.1 version in order to avoid sassc error 
+  gem "better_errors", "~> 2.9.1"
   gem "binding_of_caller"
   gem "bootsnap"
   gem "byebug", platform: :mri
