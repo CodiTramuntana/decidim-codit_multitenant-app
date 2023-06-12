@@ -9,8 +9,8 @@ DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
-gem "decidim-sortitions", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-sortitions", DECIDIM_VERSION
 
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
 gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
@@ -48,7 +48,7 @@ gem "whenever"
 # endif
 
 group :development, :test do
-  # Fixed to 2.9.1 version in order to avoid sassc error 
+  # Fixed to 2.9.1 version in order to avoid sassc error
   gem "better_errors", "~> 2.9.1"
   gem "binding_of_caller"
   gem "bootsnap"
