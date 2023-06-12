@@ -55,6 +55,7 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
+  gem "whenever-test"
 end
 
 group :development do
