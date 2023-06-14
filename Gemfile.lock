@@ -934,6 +934,7 @@ DEPENDENCIES
   figaro (>= 1.1.1)
   letter_opener_web
   listen
+  matrix (~> 0.4.2)
   openssl
   psych (< 4)
   puma

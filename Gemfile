@@ -34,7 +34,10 @@ gem "webpacker"
 
 # if deploying to a dedicated server
 gem "daemons"
+
 gem "delayed_job_active_record"
+gem "matrix", "~> 0.4.2"
+
 gem "whenever"
 # elsif deploying to a PaaS like Heroku
 # gem "redis"
