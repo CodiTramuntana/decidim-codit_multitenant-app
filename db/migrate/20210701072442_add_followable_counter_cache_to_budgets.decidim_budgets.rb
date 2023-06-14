@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_budgets (originally 20210310120613)
 
 class AddFollowableCounterCacheToBudgets < ActiveRecord::Migration[5.2]

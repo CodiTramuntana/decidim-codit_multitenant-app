@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_verifications (originally 20201028161118)
 
 class CreateDecidimVerificationsConflicts < ActiveRecord::Migration[5.2]

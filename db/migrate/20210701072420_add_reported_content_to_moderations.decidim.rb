@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20201013071533)
 
 class AddReportedContentToModerations < ActiveRecord::Migration[5.2]

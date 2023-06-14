@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_proposals (originally 20210127115628)
 
 class FixAnsweredProposalsAfterCopy < ActiveRecord::Migration[5.2]

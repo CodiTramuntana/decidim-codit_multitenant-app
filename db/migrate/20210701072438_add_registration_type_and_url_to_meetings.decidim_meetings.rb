@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_meetings (originally 20201016112641)
 
 class AddRegistrationTypeAndUrlToMeetings < ActiveRecord::Migration[5.2]

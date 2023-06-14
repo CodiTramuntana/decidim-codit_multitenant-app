@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_participatory_processes (originally 20210204154593)
 
 class AddWeightFieldToParticipatoryProcesses < ActiveRecord::Migration[5.2]
