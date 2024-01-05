@@ -53,21 +53,21 @@ describe "Whenever Schedule" do
     end
   end
 
-  context "when delete_data_portability_files are scheduled" do
+  context "when delete_download_your_data_files are scheduled" do
     let(:rake_job) { rake_jobs.third }
 
-    it "makes sure the delete_data_portability_files rake task raises no exception" do
+    it "makes sure the delete_download_your_data_files rake task raises no exception" do
       task = rake_job[:task]
       expect { Rake::Task[task].invoke }.not_to raise_error
     end
 
-    it "makes sure delete_data_portability_files schedule is correct" do
+    it "makes sure delete_download_your_data_files schedule is correct" do
       every = rake_job[:every]
       expect(every[0]).to eq(:sunday)
       expect(every[1][:at]).to eq("4:00 am")
     end
 
-    it "makes sure delete_data_portability_files command is generated" do
+    it "makes sure delete_download_your_data_files command is generated" do
       expect(rake_job[:command]).to be_truthy
     end
   end

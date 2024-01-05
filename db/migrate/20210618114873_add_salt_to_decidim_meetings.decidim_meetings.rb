@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim_meetings (originally 20201111133246)
 
 class AddSaltToDecidimMeetings < ActiveRecord::Migration[5.2]

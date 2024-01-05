@@ -4,39 +4,57 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.25-stable" }.freeze
+DECIDIM_VERSION = { git: "https://github.com/CodiTramuntana/decidim.git", branch: "release/0.27-stable" }.freeze
 
+gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-consultations", DECIDIM_VERSION
-gem "decidim-decidim_awesome", "~> 0.8.3"
-gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.25.2"
 gem "decidim-initiatives", DECIDIM_VERSION
-gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git", tag: "v0.1.19"
 gem "decidim-sortitions", DECIDIM_VERSION
+
+gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
+gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
+gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
-gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.10"
-gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.0"
+gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.11"
+gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.4"
 
-gem "sanitize", "~> 5.2"
+# temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
+gem "psych", "< 4"
 
-gem "daemons"
-gem "delayed_job_active_record"
-gem "puma"
-gem "uglifier", ">= 1.3.0"
-gem "whenever", require: false
+# Required gem from decidim-members
+gem "sanitize"
 
 gem "figaro", ">= 1.1.1"
 gem "openssl"
 
-gem "decidim", DECIDIM_VERSION
+gem "puma"
+gem "uglifier", ">= 1.3.0"
+gem "webpacker"
 
-# Remove this nokogiri forces version at any time but make sure that no __truncato_root__ text appears in the cards in general.
-# More exactly in comments in the homepage and in processes cards in the processes listing
-gem "nokogiri", "1.13.6"
+# if deploying to a dedicated server
+gem "daemons"
+
+gem "delayed_job_active_record"
+gem "matrix", "~> 0.4.2"
+
+gem "whenever"
+# elsif deploying to a PaaS like Heroku
+# gem "redis"
+# gem "sidekiq"
+# group :production do
+#   gem "aws-sdk-s3", require: false
+#   gem "fog-aws"
+#   gem "rack-ssl-enforcer"
+#   gem "rails_12factor"
+# end
+# endif
 
 group :development, :test do
-  gem "better_errors", ">= 2.3.0"
+  # Fixed to 2.9.1 version in order to avoid sassc error
+  gem "better_errors", "~> 2.9.1"
   gem "binding_of_caller"
+  gem "bootsnap"
   gem "byebug", platform: :mri
   gem "decidim-dev", DECIDIM_VERSION
   gem "faker"
@@ -45,7 +63,7 @@ end
 
 group :development do
   gem "letter_opener_web"
-  gem "listen", "~> 3.1.0"
+  gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console"

@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # This migration comes from decidim (originally 20200707132401)
 
 class AddCommentsMaxLengthToDecidimOrganization < ActiveRecord::Migration[5.2]
