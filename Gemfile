@@ -12,7 +12,7 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-sortitions", DECIDIM_VERSION
 
-gem "decidim-cdtb", "~> 0.1.4"
+gem "decidim-cdtb", "~> 0.1.6"
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
 gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
 gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
