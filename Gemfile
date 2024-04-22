@@ -12,11 +12,11 @@ gem "decidim-consultations", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-sortitions", DECIDIM_VERSION
 
-gem "decidim-cdtb", "~> 0.1.6"
+gem "decidim-cdtb", "~> 0.1.7"
 gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
 gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
 gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.27-stable"
 gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.11"
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.4"
 
