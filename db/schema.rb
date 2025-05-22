@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_27_092953) do
+ActiveRecord::Schema.define(version: 2025_05_22_082740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
   enable_extension "unaccent"
+
   create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -776,6 +779,7 @@ ActiveRecord::Schema.define(version: 2023_04_27_092953) do
     t.string "id_document"
     t.date "birthdate"
     t.datetime "created_at", null: false
+    t.jsonb "extras"
     t.index ["decidim_organization_id"], name: "decidim_census_data_org_id_index"
   end
 
