@@ -21,7 +21,7 @@ gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/d
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.4"
 
 # Block concurrent-ruby until rails is upgraded to 7.1
-gem 'concurrent-ruby', '1.3.4'
+gem "concurrent-ruby", "1.3.4"
 
 # temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
 gem "psych", "< 4"
