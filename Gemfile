@@ -13,12 +13,15 @@ gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-sortitions", DECIDIM_VERSION
 
 gem "decidim-cdtb", "~> 0.1.7"
-gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", branch: "master"
+gem "decidim-file_authorization_handler", git: "https://github.com/CodiTramuntana/decidim-file_authorization_handler.git", tag: "v0.27.1.7"
 gem "decidim-members", git: "https://github.com/CodiTramuntana/decidim-members.git"
 gem "decidim-survey_results", git: "https://github.com/CodiTramuntana/decidim-module-survey_results"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer", branch: "release/0.27-stable"
 gem "decidim-verifications-csv_email", git: "https://github.com/CodiTramuntana/decidim-verifications-csv_emails.git", tag: "v0.0.11"
 gem "decidim-verifications-sant_boi_census", git: "https://github.com/CodiTramuntana/decidim-verifications-sant_boi_census.git", tag: "v0.1.4"
+
+# Block concurrent-ruby until rails is upgraded to 7.1
+gem "concurrent-ruby", "1.3.4"
 
 # temporal solution while gems embrace new psych 4 (the default in Ruby 3.1) behavior.
 gem "psych", "< 4"
